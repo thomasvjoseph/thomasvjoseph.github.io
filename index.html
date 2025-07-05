@@ -45,6 +45,17 @@
             margin: 0 auto;
         }
         
+        .badge {
+            display: inline-block;
+            background: #ff9900;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
         .contact-info {
             margin-top: 30px;
             display: flex;
@@ -118,17 +129,6 @@
             text-align: center;
             font-size: 1.1em;
             line-height: 1.8;
-        }
-        
-        .badge {
-            display: inline-block;
-            background: #ff9900;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-top: 20px;
-            font-weight: bold;
         }
         
         /* Skills Section */
@@ -281,6 +281,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 0 40px;
+            margin-bottom: 50px;
         }
         
         .oss-card {
@@ -298,6 +299,66 @@
         .oss-card h4 {
             color: #667eea;
             margin-bottom: 10px;
+        }
+        
+        .featured-projects {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .featured-projects h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .featured-projects p {
+            margin-bottom: 30px;
+            color: #555;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .project-links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .featured-project-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+        
+        .featured-project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .featured-project-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .featured-project-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .featured-project-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
         }
         
         /* Contact Section */
@@ -361,6 +422,10 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .featured-project-card {
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -389,7 +454,6 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#opensource">Open Source</a></li>
@@ -407,7 +471,7 @@
                     DevOps Engineer with over 4 years of experience building and managing cloud-native infrastructure on AWS and Azure. 
                     Skilled in Terraform, CI/CD pipeline automation, and Docker-based deployments. AWS Community Builder and contributor 
                     to the Terraform Registry and GitHub Actions Marketplace. Proven track record in improving deployment frequency, 
-                    reliability, and disaster recovery. Currently based in London with PBS Tier 2 Dependant visa and open to full-time 
+                    reliability, and disaster recovery. Currently based in London and open to full-time 
                     opportunities in the UK. Currently expanding skills in Kubernetes and modern deployment strategies.
                 </p>
             </div>
@@ -422,8 +486,8 @@
                 <div class="skill-category">
                     <h3>Cloud Platforms</h3>
                     <ul>
-                        <li>• AWS (EC2, VPC, RDS, ECS, ECR, Lambda, ASG, ElastiCache, EBS, CodeBuild, VPC Endpoints, S3, CloudFront)</li>
-                        <li>• Azure (VMs, VNET, Load Balancer, Azure SQL, ACR, Container Apps, Front Door, Storage Accounts, SG)</li>
+                        <li>• AWS</li>
+                        <li>• Azure</li>
                         <li>• DigitalOcean</li>
                         <li>• Sevalla</li>
                         <li>• Hostinger</li>
@@ -445,7 +509,7 @@
                 <div class="skill-category">
                     <h3>Infrastructure as Code</h3>
                     <ul>
-                        <li>• Terraform (Registry Contributor)</li>
+                        <li>• Terraform</li>
                         <li>• Ansible</li>
                         <li>• Vagrant</li>
                         <li>• Infracost</li>
@@ -459,7 +523,6 @@
                         <li>• Amazon ECS</li>
                         <li>• Azure Container Apps</li>
                         <li>• Kubernetes (Learning)</li>
-                        <li>• Remote Docker Runner</li>
                     </ul>
                 </div>
                 
@@ -489,6 +552,7 @@
                     <ul>
                         <li>• PostgreSQL</li>
                         <li>• MySQL</li>
+                        <li>• NoSQL</li>
                         <li>• Redis</li>
                         <li>• Amazon RDS</li>
                         <li>• Azure SQL</li>
@@ -581,27 +645,40 @@
     <!-- Open Source Section -->
     <section id="opensource">
         <div class="container">
-            <h2>Open Source Contributions</h2>
-            <div class="oss-projects">
-                <div class="oss-card">
-                    <h4>Terraform Registry</h4>
-                    <p>Contributor - Published reusable modules for AWS and Azure</p>
-                </div>
-                <div class="oss-card">
-                    <h4>GitHub Actions for Locust</h4>
-                    <p>Published on GitHub Actions Marketplace (2024)</p>
-                </div>
-                <div class="oss-card">
-                    <h4>GitHub Actions for Manual Approval</h4>
-                    <p>Published on GitHub Actions Marketplace (2025)</p>
-                </div>
-                <div class="oss-card">
-                    <h4>Run EC2 Command via AWS SSM</h4>
-                    <p>Published on GitHub Actions Marketplace</p>
-                </div>
-                <div class="oss-card">
-                    <h4>Remote Docker Runner</h4>
-                    <p>Published on GitHub Actions Marketplace</p>
+            <div class="featured-projects">
+                <h3>🛠️ Featured GitHub Projects</h3>
+                <p>I'm an active contributor to the GitHub Actions Marketplace and Terraform Registry:</p>
+                
+                <div class="project-links-container">
+                    <div class="featured-project-card">
+                        <h4>🔧 Run EC2 Command via AWS SSM</h4>
+                        <p>Execute remote bash commands on EC2 instances using AWS Systems Manager without SSH</p>
+                        <a href="https://github.com/marketplace/actions/run-ec2-command-via-aws-ssm" target="_blank">View Project →</a>
+                    </div>
+                    
+                    <div class="featured-project-card">
+                        <h4>📦 Remote Docker Runner</h4>
+                        <p>SSH into remote servers and run Docker containers with environment secrets</p>
+                        <a href="https://github.com/marketplace/actions/remote-docker-runner" target="_blank">View Project →</a>
+                    </div>
+                    
+                    <div class="featured-project-card">
+                        <h4>🚦 Manual Approval Workflow</h4>
+                        <p>Hold GitHub Actions workflows and request manual confirmation from selected approvers</p>
+                        <a href="https://github.com/marketplace/actions/workflow-manual-approval" target="_blank">View Project →</a>
+                    </div>
+                    
+                    <div class="featured-project-card">
+                        <h4>🔍 Locust Performance Testing</h4>
+                        <p>Run Locust load tests in CI/CD pipelines with flexible configuration options</p>
+                        <a href="https://github.com/marketplace/actions/locust-test" target="_blank">View Project →</a>
+                    </div>
+                    
+                    <div class="featured-project-card">
+                        <h4>🌐 Terraform Modules for AWS/Azure</h4>
+                        <p>Reusable Terraform modules for consistent infrastructure deployment</p>
+                        <a href="https://registry.terraform.io/namespaces/thomasvjoseph" target="_blank">View Modules →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -611,7 +688,7 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Let's Connect</h2>
-            <p>I'm currently based in London with PBS Tier 2 Dependant visa and open to full-time opportunities in the UK.</p>
+            <p>I'm currently based in London and open to full-time opportunities in the UK.</p>
             <div class="contact-links">
                 <a href="mailto:thomasvjoseph6@gmail.com">Email Me</a>
                 <a href="https://linkedin.com/in/thomas-joseph-88792b132" target="_blank">LinkedIn</a>
