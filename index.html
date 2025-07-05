@@ -120,6 +120,17 @@
             line-height: 1.8;
         }
         
+        .badge {
+            display: inline-block;
+            background: #ff9900;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -148,6 +159,51 @@
         .skill-category li {
             padding: 5px 0;
             color: #555;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 40px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .project-card .tech-stack {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .project-card ul {
+            list-style-position: inside;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
         }
         
         /* Experience Section */
@@ -301,6 +357,10 @@
             .nav-links li {
                 margin: 10px 0;
             }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -310,7 +370,8 @@
         <div class="container">
             <div class="header-content">
                 <h1>Thomas Joseph</h1>
-                <p>DevOps Engineer | Cloud Infrastructure Specialist | Open Source Contributor</p>
+                <p>DevOps Engineer | Cloud Infrastructure Specialist | AWS Community Builder</p>
+                <div class="badge">AWS Community Builder</div>
                 <div class="contact-info">
                     <a href="mailto:thomasvjoseph6@gmail.com">📧 thomasvjoseph6@gmail.com</a>
                     <a href="tel:+447799150302">📱 +44 7799150302</a>
@@ -328,6 +389,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#opensource">Open Source</a></li>
@@ -343,10 +405,10 @@
             <div class="about-content">
                 <p>
                     DevOps Engineer with over 4 years of experience building and managing cloud-native infrastructure on AWS and Azure. 
-                    Skilled in Terraform, CI/CD pipeline automation, and Docker-based deployments. Contributor to the Terraform Registry 
-                    and GitHub Actions Marketplace. Proven track record in improving deployment frequency, reliability, and disaster recovery. 
-                    Currently based in London with PBS Tier 2 Dependant visa and open to full-time opportunities in the UK. 
-                    Currently expanding skills in Kubernetes and modern deployment strategies.
+                    Skilled in Terraform, CI/CD pipeline automation, and Docker-based deployments. AWS Community Builder and contributor 
+                    to the Terraform Registry and GitHub Actions Marketplace. Proven track record in improving deployment frequency, 
+                    reliability, and disaster recovery. Currently based in London with PBS Tier 2 Dependant visa and open to full-time 
+                    opportunities in the UK. Currently expanding skills in Kubernetes and modern deployment strategies.
                 </p>
             </div>
         </div>
@@ -360,9 +422,11 @@
                 <div class="skill-category">
                     <h3>Cloud Platforms</h3>
                     <ul>
-                        <li>• AWS (EC2, VPC, RDS, ECS, Lambda, S3, CloudFront)</li>
-                        <li>• Azure (VMs, VNET, Container Apps, Front Door)</li>
+                        <li>• AWS (EC2, VPC, RDS, ECS, ECR, Lambda, ASG, ElastiCache, EBS, CodeBuild, VPC Endpoints, S3, CloudFront)</li>
+                        <li>• Azure (VMs, VNET, Load Balancer, Azure SQL, ACR, Container Apps, Front Door, Storage Accounts, SG)</li>
                         <li>• DigitalOcean</li>
+                        <li>• Sevalla</li>
+                        <li>• Hostinger</li>
                     </ul>
                 </div>
                 
@@ -373,6 +437,8 @@
                         <li>• CircleCI</li>
                         <li>• AWS DevOps Tools</li>
                         <li>• CodeMagic</li>
+                        <li>• Cronicle</li>
+                        <li>• Blue/Green Deployment</li>
                     </ul>
                 </div>
                 
@@ -382,6 +448,7 @@
                         <li>• Terraform (Registry Contributor)</li>
                         <li>• Ansible</li>
                         <li>• Vagrant</li>
+                        <li>• Infracost</li>
                     </ul>
                 </div>
                 
@@ -392,6 +459,7 @@
                         <li>• Amazon ECS</li>
                         <li>• Azure Container Apps</li>
                         <li>• Kubernetes (Learning)</li>
+                        <li>• Remote Docker Runner</li>
                     </ul>
                 </div>
                 
@@ -412,6 +480,42 @@
                         <li>• CloudWatch</li>
                         <li>• Snyk & BugSnag</li>
                         <li>• Chaos Engineering (Gremlin)</li>
+                        <li>• Slack Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases & Caching</h3>
+                    <ul>
+                        <li>• PostgreSQL</li>
+                        <li>• MySQL</li>
+                        <li>• Redis</li>
+                        <li>• Amazon RDS</li>
+                        <li>• Azure SQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Web & Networking</h3>
+                    <ul>
+                        <li>• Nginx</li>
+                        <li>• Apache</li>
+                        <li>• Cloudflare (DNS, Tunnel)</li>
+                        <li>• TLS/SSL Certificates</li>
+                        <li>• DNS Management & Routing</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Other Tools & Services</h3>
+                    <ul>
+                        <li>• Git & GitHub</li>
+                        <li>• Bitbucket</li>
+                        <li>• ServiceNow (ITSM)</li>
+                        <li>• ClickUp</li>
+                        <li>• OKTA (Identity Management)</li>
+                        <li>• SendGrid</li>
+                        <li>• Locust (Load Testing)</li>
                     </ul>
                 </div>
             </div>
