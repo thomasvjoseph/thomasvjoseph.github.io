@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Joseph - DevOps Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header-content p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-info a:hover {
+            opacity: 1;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 20px 0;
+        }
+        
+        .nav-links li {
+            margin: 0 20px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            background: white;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 40px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 30px;
+            margin: 30px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            width: 45%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+        }
+        
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item .company {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item .date {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item ul {
+            list-style-position: inside;
+            color: #555;
+        }
+        
+        /* Certifications Section */
+        .certifications {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 40px;
+        }
+        
+        .cert-card {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+        
+        /* Open Source Section */
+        .oss-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 40px;
+        }
+        
+        .oss-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .oss-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .oss-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .contact-section h2 {
+            color: white;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .contact-links a:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .header-content h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Thomas Joseph</h1>
+                <p>DevOps Engineer | Cloud Infrastructure Specialist | Open Source Contributor</p>
+                <div class="contact-info">
+                    <a href="mailto:thomasvjoseph6@gmail.com">📧 thomasvjoseph6@gmail.com</a>
+                    <a href="tel:+447799150302">📱 +44 7799150302</a>
+                    <a href="https://linkedin.com/in/thomas-joseph-88792b132" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/thomasvjoseph" target="_blank">💻 GitHub</a>
+                    <a href="https://medium.com/@thomasvjoseph" target="_blank">✍️ Medium</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#opensource">Open Source</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    DevOps Engineer with over 4 years of experience building and managing cloud-native infrastructure on AWS and Azure. 
+                    Skilled in Terraform, CI/CD pipeline automation, and Docker-based deployments. Contributor to the Terraform Registry 
+                    and GitHub Actions Marketplace. Proven track record in improving deployment frequency, reliability, and disaster recovery. 
+                    Currently based in London with PBS Tier 2 Dependant visa and open to full-time opportunities in the UK. 
+                    Currently expanding skills in Kubernetes and modern deployment strategies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <ul>
+                        <li>• AWS (EC2, VPC, RDS, ECS, Lambda, S3, CloudFront)</li>
+                        <li>• Azure (VMs, VNET, Container Apps, Front Door)</li>
+                        <li>• DigitalOcean</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>CI/CD & Automation</h3>
+                    <ul>
+                        <li>• GitHub Actions</li>
+                        <li>• CircleCI</li>
+                        <li>• AWS DevOps Tools</li>
+                        <li>• CodeMagic</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Infrastructure as Code</h3>
+                    <ul>
+                        <li>• Terraform (Registry Contributor)</li>
+                        <li>• Ansible</li>
+                        <li>• Vagrant</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Containers & Orchestration</h3>
+                    <ul>
+                        <li>• Docker</li>
+                        <li>• Amazon ECS</li>
+                        <li>• Azure Container Apps</li>
+                        <li>• Kubernetes (Learning)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>• Python</li>
+                        <li>• Bash</li>
+                        <li>• Node.js</li>
+                        <li>• SQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Monitoring & Security</h3>
+                    <ul>
+                        <li>• Prometheus & Grafana</li>
+                        <li>• CloudWatch</li>
+                        <li>• Snyk & BugSnag</li>
+                        <li>• Chaos Engineering (Gremlin)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>DevOps Engineer</h3>
+                    <div class="company">Jiitak Inc - Kochi, Kerala, India</div>
+                    <div class="date">Feb 2023 – May 2025</div>
+                    <ul>
+                        <li>Automated CI/CD pipelines with GitHub Actions, CircleCI, increasing deployment frequency by 40%</li>
+                        <li>Designed Terraform modules for AWS and Azure, reducing environment setup time by 80%</li>
+                        <li>Implemented disaster recovery processes on AWS with RTO of less than 1 hour</li>
+                        <li>Built containerized environments using Docker and orchestrated with ECS</li>
+                        <li>Deployed monitoring systems with Prometheus, Grafana, and Slack integration</li>
+                        <li>Enforced DevSecOps practices using Snyk and Bugsnag</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>System Engineer</h3>
+                    <div class="company">TATA Consultancy Services - Chennai, India</div>
+                    <div class="date">Jan 2020 – Nov 2022</div>
+                    <ul>
+                        <li>Optimized AWS database operations, reducing query execution time by 20%</li>
+                        <li>Managed ITSM practices via ServiceNow with 98% SLA compliance</li>
+                        <li>Administered Active Directory and OKTA for 5,000+ users</li>
+                        <li>Maintained 24/7 uptime across critical infrastructure</li>
+                        <li>Resolved 1,200+ user issues with 95% satisfaction rate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certifications">
+                <div class="cert-card">
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <p>2022</p>
+                </div>
+                <div class="cert-card">
+                    <h3>AWS Academy Cloud Architecting</h3>
+                    <p>2020</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Gremlin Certified Enterprise Chaos Engineering</h3>
+                    <p>2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Section -->
+    <section id="opensource">
+        <div class="container">
+            <h2>Open Source Contributions</h2>
+            <div class="oss-projects">
+                <div class="oss-card">
+                    <h4>Terraform Registry</h4>
+                    <p>Contributor - Published reusable modules for AWS and Azure</p>
+                </div>
+                <div class="oss-card">
+                    <h4>GitHub Actions for Locust</h4>
+                    <p>Published on GitHub Actions Marketplace (2024)</p>
+                </div>
+                <div class="oss-card">
+                    <h4>GitHub Actions for Manual Approval</h4>
+                    <p>Published on GitHub Actions Marketplace (2025)</p>
+                </div>
+                <div class="oss-card">
+                    <h4>Run EC2 Command via AWS SSM</h4>
+                    <p>Published on GitHub Actions Marketplace</p>
+                </div>
+                <div class="oss-card">
+                    <h4>Remote Docker Runner</h4>
+                    <p>Published on GitHub Actions Marketplace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I'm currently based in London with PBS Tier 2 Dependant visa and open to full-time opportunities in the UK.</p>
+            <div class="contact-links">
+                <a href="mailto:thomasvjoseph6@gmail.com">Email Me</a>
+                <a href="https://linkedin.com/in/thomas-joseph-88792b132" target="_blank">LinkedIn</a>
+                <a href="https://github.com/thomasvjoseph" target="_blank">GitHub</a>
+                <a href="https://medium.com/@thomasvjoseph" target="_blank">Medium</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active state to navigation based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
