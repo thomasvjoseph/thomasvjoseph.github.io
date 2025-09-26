@@ -161,51 +161,6 @@
             color: #555;
         }
         
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            padding: 0 40px;
-        }
-        
-        .project-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .project-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        
-        .project-card .tech-stack {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-        
-        .project-card ul {
-            list-style-position: inside;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        
-        .project-link {
-            display: inline-block;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
         /* Experience Section */
         .timeline {
             position: relative;
@@ -258,6 +213,17 @@
             color: #555;
         }
         
+        .metric {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        
         /* Certifications Section */
         .certifications {
             display: flex;
@@ -273,6 +239,7 @@
             border-radius: 8px;
             text-align: center;
             border: 2px solid #667eea;
+            min-width: 250px;
         }
         
         /* Open Source Section */
@@ -426,6 +393,11 @@
             .featured-project-card {
                 width: 95%;
             }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -435,14 +407,14 @@
         <div class="container">
             <div class="header-content">
                 <h1>Thomas Joseph</h1>
-                <p>DevOps Engineer | Cloud Infrastructure Specialist | AWS Community Builder</p>
-                <div class="badge">AWS Community Builder</div>
+                <p>DevOps Engineer | Cloud Infrastructure Specialist | Open Source Contributor</p>
+                <div class="badge">UK Work Authorization: Eligible to work without sponsorship</div>
                 <div class="contact-info">
                     <a href="mailto:thomasvjoseph6@gmail.com">📧 thomasvjoseph6@gmail.com</a>
                     <a href="tel:+447799150302">📱 +44 7799150302</a>
                     <a href="https://linkedin.com/in/thomas-joseph-88792b132" target="_blank">💼 LinkedIn</a>
                     <a href="https://github.com/thomasvjoseph" target="_blank">💻 GitHub</a>
-                    <a href="https://medium.com/@thomasvjoseph" target="_blank">✍️ Medium</a>
+                    <a href="https://thomasvjoseph.github.io/" target="_blank">🌐 Portfolio</a>
                 </div>
             </div>
         </div>
@@ -468,11 +440,9 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <p>
-                    DevOps Engineer with over 4 years of experience building and managing cloud-native infrastructure on AWS and Azure. 
-                    Skilled in Terraform, CI/CD pipeline automation, and Docker-based deployments. AWS Community Builder and contributor 
-                    to the Terraform Registry and GitHub Actions Marketplace. Proven track record in improving deployment frequency, 
-                    reliability, and disaster recovery. Currently based in London and open to full-time 
-                    opportunities in the UK. Currently expanding skills in Kubernetes and modern deployment strategies.
+                    DevOps Engineer with 4+ years of experience building scalable cloud infrastructure on AWS and Azure. 
+                    Open-source contributor, skilled in Infrastructure as Code (Terraform), CI/CD automation, and container orchestration. 
+                    Delivered 40% faster release cycles, 80% reduced provisioning time, and 30% lower cloud costs through infrastructure optimization.
                 </p>
             </div>
         </div>
@@ -481,7 +451,7 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2>Core Skills</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Cloud Platforms</h3>
@@ -489,8 +459,6 @@
                         <li>• AWS</li>
                         <li>• Azure</li>
                         <li>• DigitalOcean</li>
-                        <li>• Sevalla</li>
-                        <li>• Hostinger</li>
                     </ul>
                 </div>
                 
@@ -499,10 +467,9 @@
                     <ul>
                         <li>• GitHub Actions</li>
                         <li>• CircleCI</li>
-                        <li>• AWS DevOps Tools</li>
-                        <li>• CodeMagic</li>
-                        <li>• Cronicle</li>
-                        <li>• Blue/Green Deployment</li>
+                        <li>• AWS CodePipeline</li>
+                        <li>• AWS CodeBuild</li>
+                        <li>• Codemagic</li>
                     </ul>
                 </div>
                 
@@ -511,23 +478,31 @@
                     <ul>
                         <li>• Terraform</li>
                         <li>• Ansible</li>
-                        <li>• Vagrant</li>
-                        <li>• Infracost</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Containers & Orchestration</h3>
+                    <h3>Containerization</h3>
                     <ul>
                         <li>• Docker</li>
                         <li>• Amazon ECS</li>
                         <li>• Azure Container Apps</li>
-                        <li>• Kubernetes (Learning)</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <h3>Monitoring & Observability</h3>
+                    <ul>
+                        <li>• Prometheus</li>
+                        <li>• Grafana</li>
+                        <li>• AWS CloudWatch</li>
+                        <li>• Uptime Kuma</li>
+                        <li>• Bugsnag</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Scripting & Languages</h3>
                     <ul>
                         <li>• Python</li>
                         <li>• Bash</li>
@@ -537,25 +512,21 @@
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Monitoring & Security</h3>
+                    <h3>Security & DevSecOps</h3>
                     <ul>
-                        <li>• Prometheus & Grafana</li>
-                        <li>• CloudWatch</li>
-                        <li>• Snyk & BugSnag</li>
-                        <li>• Chaos Engineering (Gremlin)</li>
-                        <li>• Slack Integration</li>
+                        <li>• Snyk</li>
+                        <li>• IAM</li>
+                        <li>• Cloudflare</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Databases & Caching</h3>
+                    <h3>Databases</h3>
                     <ul>
                         <li>• PostgreSQL</li>
                         <li>• MySQL</li>
-                        <li>• NoSQL</li>
                         <li>• Redis</li>
-                        <li>• Amazon RDS</li>
-                        <li>• Azure SQL</li>
+                        <li>• MongoDB</li>
                     </ul>
                 </div>
                 
@@ -564,22 +535,8 @@
                     <ul>
                         <li>• Nginx</li>
                         <li>• Apache</li>
-                        <li>• Cloudflare (DNS, Tunnel)</li>
-                        <li>• TLS/SSL Certificates</li>
-                        <li>• DNS Management & Routing</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Other Tools & Services</h3>
-                    <ul>
-                        <li>• Git & GitHub</li>
-                        <li>• Bitbucket</li>
-                        <li>• ServiceNow (ITSM)</li>
-                        <li>• ClickUp</li>
-                        <li>• OKTA (Identity Management)</li>
-                        <li>• SendGrid</li>
-                        <li>• Locust (Load Testing)</li>
+                        <li>• DNS</li>
+                        <li>• Cloudflare</li>
                     </ul>
                 </div>
             </div>
@@ -592,29 +549,41 @@
             <h2>Work Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>DevOps Engineer</h3>
-                    <div class="company">Jiitak Inc - Kochi, Kerala, India</div>
-                    <div class="date">Feb 2023 – May 2025</div>
+                    <h3>Freelance DevOps Engineer</h3>
+                    <div class="company">Remote</div>
+                    <div class="date">Feb 2023 – Present</div>
                     <ul>
-                        <li>Automated CI/CD pipelines with GitHub Actions, CircleCI, increasing deployment frequency by 40%</li>
-                        <li>Designed Terraform modules for AWS and Azure, reducing environment setup time by 80%</li>
-                        <li>Implemented disaster recovery processes on AWS with RTO of less than 1 hour</li>
-                        <li>Built containerized environments using Docker and orchestrated with ECS</li>
-                        <li>Deployed monitoring systems with Prometheus, Grafana, and Slack integration</li>
-                        <li>Enforced DevSecOps practices using Snyk and Bugsnag</li>
+                        <li>Migrated Digital Ocean droplets to Hetzner by containerizing workloads (Docker) and deploying behind an Nginx-based ALB <span class="metric">25% cost reduction</span></li>
+                        <li>Led AWS-to-Azure cloud migration using Terraform modules <span class="metric">40% faster deployment</span></li>
+                        <li>Designed and deployed secure, scalable AWS and Azure infrastructure for clients</li>
+                        <li>Built reusable, automated CI/CD pipelines using GitHub Actions</li>
+                        <li>Provided cost-optimization consulting <span class="metric">20-25% cloud spend reduction</span></li>
                     </ul>
                 </div>
                 
                 <div class="timeline-item">
-                    <h3>System Engineer</h3>
-                    <div class="company">TATA Consultancy Services - Chennai, India</div>
+                    <h3>DevOps Engineer</h3>
+                    <div class="company">Jiltak Inc - Kochi, Kerala, India</div>
+                    <div class="date">Feb 2023 – May 2025</div>
+                    <ul>
+                        <li>Architected and standardized 15+ CI/CD pipelines for microservices <span class="metric">40% faster releases</span></li>
+                        <li>Developed 25+ reusable Terraform modules for multi-account AWS/Azure infrastructure <span class="metric">80% faster provisioning</span></li>
+                        <li>Containerized 10+ microservices with zero-downtime deployments</li>
+                        <li>Implemented observability stack with Prometheus/Grafana <span class="metric">45% faster incident response</span></li>
+                        <li>Integrated Snyk and Bugsnag into CI/CD <span class="metric">60% fewer vulnerabilities</span></li>
+                        <li>Optimized cloud costs <span class="metric">30% monthly savings</span> while maintaining 99.9% availability</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Systems Engineer</h3>
+                    <div class="company">Tata Consultancy Services - Chennai, India</div>
                     <div class="date">Jan 2020 – Nov 2022</div>
                     <ul>
-                        <li>Optimized AWS database operations, reducing query execution time by 20%</li>
-                        <li>Managed ITSM practices via ServiceNow with 98% SLA compliance</li>
-                        <li>Administered Active Directory and OKTA for 5,000+ users</li>
-                        <li>Maintained 24/7 uptime across critical infrastructure</li>
-                        <li>Resolved 1,200+ user issues with 95% satisfaction rate</li>
+                        <li>Optimized AWS-hosted databases <span class="metric">20% faster query execution</span></li>
+                        <li>Automated maintenance across 500+ Linux/Windows servers <span class="metric">25% better resource utilization</span></li>
+                        <li>Managed identity and access for 5,000+ users via Active Directory and OKTA</li>
+                        <li>Resolved 1,200+ support tickets with <span class="metric">98% SLA compliance</span></li>
                     </ul>
                 </div>
             </div>
@@ -631,12 +600,12 @@
                     <p>2022</p>
                 </div>
                 <div class="cert-card">
-                    <h3>AWS Academy Cloud Architecting</h3>
-                    <p>2020</p>
-                </div>
-                <div class="cert-card">
                     <h3>Gremlin Certified Enterprise Chaos Engineering</h3>
                     <p>2021</p>
+                </div>
+                <div class="cert-card">
+                    <h3>AWS Academy Cloud Architecting</h3>
+                    <p>2020</p>
                 </div>
             </div>
         </div>
@@ -646,38 +615,24 @@
     <section id="opensource">
         <div class="container">
             <div class="featured-projects">
-                <h3>🛠️ Featured GitHub Projects</h3>
-                <p>I'm an active contributor to the GitHub Actions Marketplace and Terraform Registry:</p>
+                <h3>Open Source Contributions</h3>
+                <p>Published reusable DevOps tools and modules used by the developer community</p>
                 
                 <div class="project-links-container">
                     <div class="featured-project-card">
-                        <h4>🔧 Run EC2 Command via AWS SSM</h4>
-                        <p>Execute remote bash commands on EC2 instances using AWS Systems Manager without SSH</p>
-                        <a href="https://github.com/marketplace/actions/run-ec2-command-via-aws-ssm" target="_blank">View Project →</a>
+                        <h4>GitHub Actions Published</h4>
+                        <p><strong>Locust Load Testing Action</strong> - Automates load testing within CI/CD pipelines using Locust</p>
+                        <p><strong>Manual Approval Workflow Action</strong> - Introduces manual approval steps in GitHub Actions workflows</p>
+                        <p><strong>EC2 SSM Command Runner</strong> - Enables remote shell command execution on AWS EC2 instances using SSM</p>
+                        <p><strong>Remote Docker Runner</strong> - SSH into remote servers and run Docker containers with environment secrets</p>
+                        <a href="https://github.com/marketplace/actions" target="_blank">View on GitHub Marketplace →</a>
                     </div>
                     
                     <div class="featured-project-card">
-                        <h4>📦 Remote Docker Runner</h4>
-                        <p>SSH into remote servers and run Docker containers with environment secrets</p>
-                        <a href="https://github.com/marketplace/actions/remote-docker-runner" target="_blank">View Project →</a>
-                    </div>
-                    
-                    <div class="featured-project-card">
-                        <h4>🚦 Manual Approval Workflow</h4>
-                        <p>Hold GitHub Actions workflows and request manual confirmation from selected approvers</p>
-                        <a href="https://github.com/marketplace/actions/workflow-manual-approval" target="_blank">View Project →</a>
-                    </div>
-                    
-                    <div class="featured-project-card">
-                        <h4>🔍 Locust Performance Testing</h4>
-                        <p>Run Locust load tests in CI/CD pipelines with flexible configuration options</p>
-                        <a href="https://github.com/marketplace/actions/locust-test" target="_blank">View Project →</a>
-                    </div>
-                    
-                    <div class="featured-project-card">
-                        <h4>🌐 Terraform Modules for AWS/Azure</h4>
-                        <p>Reusable Terraform modules for consistent infrastructure deployment</p>
-                        <a href="https://registry.terraform.io/namespaces/thomasvjoseph" target="_blank">View Modules →</a>
+                        <h4>Terraform Modules Published</h4>
+                        <p><strong>Reusable Modules for AWS and Azure</strong> - Modular, production-ready Terraform templates</p>
+                        <p>Simplifies cloud infrastructure provisioning with consistent, reusable code</p>
+                        <a href="https://registry.terraform.io/namespaces/thomasvjoseph" target="_blank">View on Terraform Registry →</a>
                     </div>
                 </div>
             </div>
@@ -693,7 +648,7 @@
                 <a href="mailto:thomasvjoseph6@gmail.com">Email Me</a>
                 <a href="https://linkedin.com/in/thomas-joseph-88792b132" target="_blank">LinkedIn</a>
                 <a href="https://github.com/thomasvjoseph" target="_blank">GitHub</a>
-                <a href="https://medium.com/@thomasvjoseph" target="_blank">Medium</a>
+                <a href="https://thomasvjoseph.github.io/" target="_blank">Portfolio</a>
             </div>
         </div>
     </section>
